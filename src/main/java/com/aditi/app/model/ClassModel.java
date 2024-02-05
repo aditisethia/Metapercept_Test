@@ -2,7 +2,7 @@ package com.aditi.app.model;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,7 +27,7 @@ public class ClassModel {
 	private School school;
 	
 	
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Student> student = new ArrayList<>();
 	
 	private Boolean status = true;
